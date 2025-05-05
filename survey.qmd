@@ -1,0 +1,730 @@
+---
+format: html
+echo: false
+warning: false
+footer: "Created by [Promote Care & Prevent Harm ](https://promotecare.org/)"
+theme: _brand.yml
+---
+
+```{r}
+library(surveydown)
+```
+
+::: {#welcome .sd-page} 
+
+
+##  Mindsets on Promoting Care & Preventing Harm 
+
+### Take the quiz to find out how you help people!
+
+How do you think about social change? People have different mindsets about how to address mental health, physical health, safety, and relationships.
+
+We would like to invite you to take part in a research study that we are doing to understand goals and strategies about ways people consider more care and less harm in their surroundings. This study involves a survey that takes no more than 20 minutes to complete. There is no payment for participating. However, you can receive the score from your responses at the end of the study. This score is meant to reflect your preferred mindsets or views for creating change.
+
+
+```{r}
+sd_question(
+  type  = "mc",
+  id    = "consent",
+  label = "Do you agree to participate in this research study?",
+  option = c(
+    "I DO AGREE to participate in the research study" = "yes",
+    "I DO NOT agree to participate in the study" = "no"
+  )
+)
+
+sd_question(
+  type  = "text",
+  id    = "participant_id",
+  label = "Create a survey password for use in other FRI Public Health Surveys (you will need to save this!). Password will need to be 5 characters and 4 numbers. (ex. bills2000 or happy3232 or phlfs9934)"
+)
+
+
+sd_question(
+  type  = "text",
+  id    = "team_id",
+  label = "If you were assigned a team ID, enter it here! (ex. FRI-PH-1) If you were not assigned a team ID, leave this field blank."
+)
+
+sd_question(
+  type  = "date",
+  id    = "training_date",
+  label = "When is your training date? If you do not have a training date, do not edit this field."
+)
+
+sd_next(next_page = 'page2')
+
+```
+:::
+
+::: {#page2 .sd-page}
+Below are statements which may or may not describe you. If a statement does not describe you at all, select 'Strongly Disagree'. If a statement describes you very well, select 'Strongly Agree'.
+
+```{r}
+sd_question(
+  type  = "mc_buttons",
+  id    = "test",
+  label = "Try using the buttons now. Select 'Slightly Agree' and begin the survey below:",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "promotecare1",
+  label = "I typically focus on making a positive impact on people.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "preventharm1",
+  label = "I am generally good at stopping harmful actions from happening to people.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "failcare1",
+  label = "I frequently worry the positive impact of caring will be less successful than I hope.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "escapeharm1",
+  label = "I am generally able to help people escape from harm.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "failharm1",
+  label = "I worry about people being harmed by other people.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "escapeharm2",
+  label = "I am typically able to help my friends leave harmful relationships.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "failcare2",
+  label = "I imagine how I might fall short of helping people achieve their hopes and aspirations.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "preventharm2",
+  label = "I typically focus on helping people by taking action before a negative impact.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "promotecare2",
+  label = "I see myself as someone who is uplifting people to achieve higher well-being.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "failharm2",
+  label = "I am unable to reduce risk and threats to others.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "escapeharm3",
+  label = "I am generally sure that I can help people navigate harmful situations.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "preventharm3",
+  label = "I frequently prevent threats from harming people in my life.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "promotecare3",
+  label = "Right now, I am focused on promoting care for others.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "failcare3",
+  label = "I am frustrated when good things fail to materialize for people.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "failharm3",
+  label = "I frequently think about how I will fail to prevent harm from impacting people.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "promotecare4",
+  label = "I am focused on making good things happen for other people.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "failcare4",
+  label = "Right now, I am concerned about missing out on opportunities to care for others.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "failharm4",
+  label = "I am anxious that I will fall short of my goal to protect people from harmful events.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "escapeharm4",
+  label = "I imagine myself successfully escaping from threatening people.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "preventharm4",
+  label = "I imagine myself successfully preventing bad things from happening to people.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "failharm5",
+  label = "I often imagine people will experience bad things unless I help.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "failcare5",
+  label = "I see myself as someone who has trouble helping people achieve the highest amount of well-being.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "preventharm5",
+  label = "Right now, I am focused on trying to prevent threats and risks to people.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "escapeharm5",
+  label = "Right now, I am focused on trying to remove all threats and risks for others.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "mc_buttons",
+  id    = "promotecare5",
+  label = "I frequently imagine how I can help others feel well, safe, healthy, and connected.",
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree" = "2",
+    "Slightly Disagree" = "3",
+    "Slightly Agree" = "4",
+    "Agree" = "5",
+    "Strongly Agree" = "6"
+  )
+)
+
+
+sd_question(
+  type  = "textarea",
+  id    = "prevent_qual",
+  label = "What type of threats, risks, or harmful things came to mind when you were responding to the prior statements?"
+)
+
+sd_question(
+  type  = "textarea",
+  id    = "promote_qual",
+  label = "What type of care, well-being, and good things came to mind when you were responding to the prior statements?"
+)
+
+
+sd_next(next_page = "page3")
+```
+:::
+
+::: {#page3 .sd-page}
+
+### Goals
+
+People can be equally motivated to help others but have different goals for helping. Below, we present you with two goals. Select your preferred goal for helping others. The choices will be very similar and be may be difficult to pick. That's okay! Pick your preferred goal for helping others. You can only select ONE choice. Some of the choices may include terms you are not familiar with yet. If you don't know the meaning of a word or phrase, please select 'don't know'.
+
+
+#### Select the goal you prefer!
+
+
+```{r}
+
+sd_question(
+  type  = "mc",
+  id    = "goal1",
+  label = "A moral community does the:",
+  option = c(
+    "most good" = "1",
+    "least harm" = "0",
+    "don't know" = "-99"
+  )
+)
+
+sd_question(
+  type  = "mc",
+  id    = "goal2",
+  label = "An ideal community is:",
+  option = c(
+    "free from harm, threats, violence" = "0",
+    "full of safety, health, care" = "1",
+    "don't know" = "-99"
+  )
+)
+
+sd_question(
+  type  = "mc",
+  id    = "goal3",
+  label = "A safe community aims to:",
+  option = c(
+    "prevent violence" = "0",
+    "promote peace" = "1",
+    "don't know" = "-99"
+  )
+)
+
+sd_question(
+  type  = "mc",
+  id    = "goal4",
+  label = "It is most important to help people:",
+  option = c(
+    "before harm has occurred" = "1",
+    "after harm has occurred" = "0",
+    "don't know" = "-99"
+  )
+)
+
+sd_question(
+  type  = "mc",
+  id    = "goal5",
+  label = "A healthy community aims to:",
+  option = c(
+    "prevent disease" = "0",
+    "improve health" = "1",
+    "don't know" = "-99"
+  )
+)
+
+sd_question(
+  type  = "mc",
+  id    = "goal6",
+  label = "The best way to create change is to:",
+  option = c(
+    "increase positive things" = "1",
+    "eliminate risks and threats" = "0",
+    "don't know" = "-99"
+  )
+)
+
+sd_question(
+  type  = "mc",
+  id    = "goal7",
+  label = "The best way to address a problem is to:",
+  option = c(
+    "switch your focus to positive things" = "1",
+    "solve the problem immediately" = "0",
+    "don't know" = "-99"
+  )
+)
+
+sd_question(
+  type  = "mc",
+  id    = "goal8",
+  label = "A mentally well community addresses:",
+  option = c(
+    "happiness and satisfaction" = "1",
+    "mental health problems" = "0",
+    "don't know" = "-99"
+  )
+)
+
+sd_question(
+  type  = "mc",
+  id    = "goal9",
+  label = "This statement is most true:",
+  option = c(
+    "The world has many problems" = "1",
+    "The world can be much better" = "0",
+    "don't know" = "-99"
+  )
+)
+
+sd_question(
+  type  = "mc",
+  id    = "goal10",
+  label = "I think I am someone who prefers to help others by:",
+  option = c(
+    "promoting care" = "1",
+    "preventing harm" = "0",
+    "don't know" = "-99"
+  )
+)
+
+sd_next(next_page = "page4")
+
+
+```
+:::
+
+::: {#page4 .sd-page}
+
+### Demographics
+
+Please complete demographic information below.
+
+```{r}
+sd_question(
+  type  = "select",
+  id    = "gender",
+  label = "What is your gender identity?",
+  option = c(
+    "Cisgender female" = "cis_fem",
+    "Cisgender male"   = "cis_male",
+    "Transgender female" = "trans_fem",
+    "Transgender male" = "trans_male",
+    "Genderqueer" = "genderqueer",
+    "Prefer not to say" = "PNS"
+  )
+)
+
+sd_question(
+  type  = "select",
+  id    = "race",
+  label = "What is your racial/ethnic identity?",
+  option = c(
+    "American Indian or Alaska Native" = "indian_alaskan",
+    "Asian" = "asian",
+    "Black or African American" = "black_aa",
+    "Hispanic or Latine"= "hispanic",
+    "Middle Eastern or North African" = "middleEast",
+    "Native Hawaiian or Pacific Islander" = "hawaiian",
+    "White or Caucasian" = "white_caucasian",
+    "Two or more races/ethnicities" = "two_more_races",
+    "Prefer not to say" = "PNS"
+  )
+)
+
+sd_question(
+  type  = "select",
+  id    = "education",
+  label = "What is the highest level of education you completed?",
+  option = c(
+    "No formal education" = "no_form",
+    "8th grade" = "8th_grade",
+    "High school graduate" = "high_school",
+    "Associate degree" = "assoc_deg",
+    "Bachelor's degree" = "bach_deg",
+    "Master's degree" = "master_deg",
+    "Professional or doctorate degree" = "prof_deg",
+    "Prefer not to say" = "PNS"
+  )
+)
+
+sd_question(
+  type  = "select",
+  id    = "role",
+  label = "What best describes your role?",
+  option = c(
+    "High school or college student" = "hs_col",
+    "Board of Directors (School Board, Nonprofit Board)" = "bod",
+    "K-12 School Administrator (Superintendent or Principal)" = "admin",
+    "Mental Health Provider (Counselor, Psychologist, Social Worker)" = "mental_provider",
+    "Community Nonprofit Staff (ED, Program Manager, Prevention Specialist)" = "community",
+    "Law Enforcement (SRO, SBLE)" = "law",
+    "Higher Education Admin or Faculty" = "ed",
+    "None of the above" = "none",
+    "Prefer not to say" = "PNS"
+  )
+)
+
+sd_question(
+  type  = "select",
+  id    = "industry",
+  label = "What is your professional industry?",
+  option = c(
+    "Student in school" = "student",
+    "K-12 Education" = "k12",
+    "Higher Education" = "higher_ed",
+    "Local, state, or federal government" = "govt",
+    "Nonprofit organization" = "non_profit",
+    "For-profit small business" = "for_profit_small",
+    "For-profit business" = "for_profit",
+    "Prefer not to say" = "PNS"
+  )
+)
+
+sd_question(
+  type  = "select",
+  id    = "age",
+  label = "What is your age?",
+  option = c(
+    "Under 18 years" = "under_18",
+    "18 - 24 years" = "18-24",
+    "25 - 34 years" = "25-34",
+    "35 - 44 years" = "35-44",
+    "45 - 54 years" = "45-54",
+    "55 - 64 years" = "55-64",
+    "65 or older" = "65_older",
+    "Prefer not to say" = "PNS"
+  )
+)
+
+sd_question(
+  type   = "mc_buttons",
+  id     = "surveys",
+  label  = "How many times have you taken this survey?",
+  option = c(
+    "One" = "1",
+    "Two" = "2",
+    "Three or more"  = "3"
+  )
+)
+
+```
+
+Here is the information you entered at the beginning of the survey. You will need it when viewing your results!
+
+```{r}
+sd_output("display_participant_id")
+sd_output("display_team_id")
+sd_output("display_training_date")
+
+sd_redirect(
+  id     = "redirect",
+  url    = "google.com", # replace with "mindsets results website link" when other app is published
+  label  = "View Your Results!",
+  button = TRUE,
+  newtab = TRUE
+)
+
+```
+:::
+
